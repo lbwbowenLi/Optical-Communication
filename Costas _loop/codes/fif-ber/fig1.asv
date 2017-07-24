@@ -1,0 +1,24 @@
+global fai;
+ber2=zeros(1,10);
+ber3=zeros(1,10);
+ber4=zeros(1,10);
+ber5=zeros(1,10);
+ber6=zeros(1,10);
+m=linspace(0.1,4,10);
+for i=1:10  
+   ber2(i)=uplink(m(i));  
+end
+fai=-pi/4;
+for i=1:10 
+  ber3(i)=uplinkp(m(i)); 
+end
+fai=-pi/8;
+for i=1:10 
+  ber4(i)=uplinkp(m(i)); 
+end
+fai=0;
+for i=1:10 
+  ber5(i)=uplinkp(m(i)); 
+end
+semilogy(m,ber2,m,ber3,m,ber4,m,ber5,m,ber6);
+legend('2','3','4','5','6');
